@@ -5,7 +5,7 @@
 ## Notes: Automates tedious quests
 ## OptionalDeps: LibStub, CallbackHandler-1.0, HereBeDragons
 
-## X-Curse-Project-ID: x
+## X-Curse-Project-ID: 523854
 ## X-WoWI-ID: x
 
 libs/LibStub/LibStub.lua
