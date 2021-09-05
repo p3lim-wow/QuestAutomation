@@ -6,7 +6,7 @@
 ## OptionalDeps: LibStub, CallbackHandler-1.0, HereBeDragons
 
 ## X-Curse-Project-ID: 523854
-## X-WoWI-ID: x
+## X-WoWI-ID: 26142
 
 libs/LibStub/LibStub.lua
 libs/CallbackHandler-1.0/CallbackHandler-1.0.lua
