@@ -1,0 +1,39 @@
+## Interface: 90100
+## Author: p3lim
+## Version: @project-version@
+## Title: Quest Automation
+## Notes: Automates tedious quests
+## OptionalDeps: LibStub, CallbackHandler-1.0, HereBeDragons
+
+## X-Curse-Project-ID: x
+## X-WoWI-ID: x
+
+libs/LibStub/LibStub.lua
+libs/CallbackHandler-1.0/CallbackHandler-1.0.lua
+libs/HereBeDragons/HereBeDragons-2.0.lua
+
+addon.lua
+
+mixins/event.lua
+
+locale/initialize.lua
+locale/deDE.lua
+locale/esES.lua
+locale/esMX.lua
+locale/frFR.lua
+locale/itIT.lua
+locale/koKR.lua
+locale/ptBR.lua
+locale/ruRU.lua
+locale/zhCN.lua
+locale/zhTW.lua
+locale/finish.lua
+
+modules/barrels.lua
+modules/loh.lua
+modules/training.lua
+modules/chores.lua
+modules/boggarts.lua
+modules/unknown.lua
+modules/wilderling.lua
+modules/supplies.lua
