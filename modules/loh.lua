@@ -70,7 +70,7 @@ local function onTurtleAction(self, unit, _, spellID)
 end
 
 local function getCheckpoint()
-	local _, _, num = AuraUtil.FindAura(addon.AuraFilterID, 'vehicle', 'HELPFUL', TURTLE_CHECKPOINT)
+	local _, _, num = AuraUtil.FindAura(addon.AuraFilterID, 'vehicle', 'HARMFUL', TURTLE_CHECKPOINT)
 	return num or 0
 end
 
@@ -136,19 +136,12 @@ local function track(questData)
 	activeQuestData = questData
 end
 
-function addon:QUEST_ACCEPTED(_, questID)
-	local questData = QUESTS[questID]
-	if questData then
-		track(questData)
-	end
-end
-
 function addon:QUEST_LOG_UPDATE()
 	-- if logging in with the quest already accepted
 	for questID, questData in next, QUESTS do
 		if C_QuestLog.IsOnQuest(questID) then
 			track(questData)
-			break
+			return
 		end
 	end
 
