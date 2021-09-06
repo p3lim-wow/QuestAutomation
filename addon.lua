@@ -6,14 +6,15 @@ addon.NAME = addonName
 
 -- utils
 
+local bindParent = CreateFrame('Frame')
 function addon:Unbind()
-	ClearOverrideBindings(self)
+	ClearOverrideBindings(bindParent)
 end
 
 local BUTTON = 'ACTIONBUTTON%d'
 function addon:BindAction(actionIndex)
 	self:Unbind() -- for good measure
-	SetOverrideBinding(self, true, 'SPACE', BUTTON:format(actionIndex))
+	SetOverrideBinding(bindParent, true, 'SPACE', BUTTON:format(actionIndex))
 end
 
 local NPC_ID_PATTERN = '%w+%-.-%-.-%-.-%-.-%-(.-)%-'
