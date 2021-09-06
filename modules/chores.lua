@@ -51,24 +51,14 @@ local function onQuestRemoved(self, questID)
 	end
 end
 
-local function track()
-	if not addon:IsEventRegistered('UPDATE_MOUSEOVER_UNIT', onMouseOver) then
-		addon:RegisterEvent('UPDATE_MOUSEOVER_UNIT', onMouseOver)
-	end
-	if not addon:IsEventRegistered('QUEST_REMOVED', onQuestRemoved) then
-		addon:RegisterEvent('QUEST_REMOVED', onQuestRemoved)
-	end
-end
-
-function addon:QUEST_ACCEPTED(_, questID)
-	if questID == CHORES_QUEST then
-		track()
-	end
-end
-
 function addon:QUEST_LOG_UPDATE()
 	-- if logging in with the quest already accepted
 	if C_QuestLog.IsOnQuest(CHORES_QUEST) then
-		track()
+		if not addon:IsEventRegistered('UPDATE_MOUSEOVER_UNIT', onMouseOver) then
+			addon:RegisterEvent('UPDATE_MOUSEOVER_UNIT', onMouseOver)
+		end
+		if not addon:IsEventRegistered('QUEST_REMOVED', onQuestRemoved) then
+			addon:RegisterEvent('QUEST_REMOVED', onQuestRemoved)
+		end
 	end
 end

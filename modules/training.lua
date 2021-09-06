@@ -127,29 +127,19 @@ local function onQuestRemoved(self, questID)
 	end
 end
 
-local function track(questData)
-	if not addon:IsEventRegistered('UNIT_AURA', onUnitAura) then
-		addon:RegisterEvent('UNIT_AURA', onUnitAura)
-	end
-	if not addon:IsEventRegistered('QUEST_REMOVED', onQuestRemoved) then
-		addon:RegisterEvent('QUEST_REMOVED', onQuestRemoved)
-	end
-
-	activeQuestData = questData
-end
-
-function addon:QUEST_ACCEPTED(_, questID)
-	local questData = QUESTS[questID]
-	if questData then
-		track(questData)
-	end
-end
-
 function addon:QUEST_LOG_UPDATE()
 	-- if logging in with the quest already accepted
 	for questID, questData in next, QUESTS do
 		if C_QuestLog.IsOnQuest(questID) then
-			track(questData)
+			if not addon:IsEventRegistered('UNIT_AURA', onUnitAura) then
+				addon:RegisterEvent('UNIT_AURA', onUnitAura)
+			end
+			if not addon:IsEventRegistered('QUEST_REMOVED', onQuestRemoved) then
+				addon:RegisterEvent('QUEST_REMOVED', onQuestRemoved)
+			end
+
+			activeQuestData = questData
+
 			return
 		end
 	end
