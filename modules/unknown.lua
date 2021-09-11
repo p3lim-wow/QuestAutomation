@@ -1,18 +1,13 @@
 local _, addon = ...
 local L = addon.L
 
+local UNKNOWN_QUEST = 62453 -- Into the Unknown
 local VERSE_NPC = 174365
 local JUICE_NPC = 174371
 local JUICE_ITEM = 183961
-local GUESS_NPCS = {
-	-- it seems all the NPCs are correct, but I could be wrong
-	[174770] = true,
-	[174498] = true,
-	[174771] = true,
-	[174499] = true,
-}
+local GUESS_NPC = 174498 -- the correct version of Shimmersod
 
--- local gormJuiceStage
+local gormJuiceStage = 0
 function addon:GOSSIP_SHOW()
 	if IsShiftKeyDown() then
 		-- a way to hard-prevent the automation
@@ -29,22 +24,48 @@ function addon:GOSSIP_SHOW()
 			C_GossipInfo.SelectOption(2)
 		end
 	elseif npcID == JUICE_NPC then
-		-- create "Gorm Juice" by talking to the NPC in the correct sequence
 		if GetItemCount(JUICE_ITEM) == 0 then
-			self:SendNotice(L['Click Squeezums first'])
+			if gormJuiceStage == 0 then -- no spammy
+				self:SendNotice(L['Click Squeezums first'])
+			end
 		else
-			-- TODO: this one needs some work
-			-- https://www.wowhead.com/quest=62453/into-the-unknown#comments:id=3281316
-
-			-- if not gormJuiceStage then
-			-- 	C_GossipInfo.SelectOption(2)
-			-- elseif gormJuiceStage == 1 then
-			-- 	C_GossipInfo.SelectOption(C_GossipInfo.GetNumOptions())
-			-- end
-
-			-- gormJuiceStage = (gormJuiceStage or 0) + 1
+			gormJuiceStage = gormJuiceStage + 1
+			if gormJuiceStage == 1 then
+				C_GossipInfo.SelectOption(2)
+			elseif gormJuiceStage == 2 then
+				C_GossipInfo.SelectOption(5)
+			end
 		end
-	elseif GUESS_NPCS[npcID] then
+	elseif npcID == GUESS_NPC then
 		C_GossipInfo.SelectOption(3)
+	end
+end
+
+-- don't really need to mark the correct version, but it's handy
+local function onMouseOver()
+	local npcID = addon:GetNPCID('mouseover')
+	if npcID == GUESS_NPC then
+		if GetRaidTargetIndex('mouseover') ~= 8 then
+			SetRaidTarget('mouseover', 8)
+		end
+	end
+end
+
+local function onQuestRemoved(self, questID)
+	if questID == UNKNOWN_QUEST then
+		-- reset
+		self:UnregisterEvent('UPDATE_MOUSEOVER_UNIT', onMouseOver)
+		return true
+	end
+end
+
+function addon:QUEST_LOG_UPDATE()
+	if C_QuestLog.IsOnQuest(UNKNOWN_QUEST) then
+		if not addon:IsEventRegistered('UPDATE_MOUSEOVER_UNIT', onMouseOver) then
+			addon:RegisterEvent('UPDATE_MOUSEOVER_UNIT', onMouseOver)
+		end
+		if not addon:IsEventRegistered('QUEST_REMOVED', onQuestRemoved) then
+			addon:RegisterEvent('QUEST_REMOVED', onQuestRemoved)
+		end
 	end
 end
