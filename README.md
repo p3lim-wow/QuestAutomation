@@ -16,6 +16,7 @@ This addon will add "helpers" to automate certain quests or types of quests:
 	- "[We'll Make an Aspirant Out of You](https://www.wowhead.com/quest=59585)"
 	- "[A More Civilized Way](https://ptr.wowhead.com/quest=64271)"
 	- "[The Weight of Stone](https://www.wowhead.com/quest=64018)"
+	- "[Aid From Above](https://www.wowhead.com/quest=60657)"
 	- "[Taming the Wilderling](https://www.wowhead.com/npc=180014)"
 
 ## Feedback

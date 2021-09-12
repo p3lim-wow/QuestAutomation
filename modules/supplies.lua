@@ -34,7 +34,31 @@ local QUESTS = {
 			{x=0.447420, y=0.735700, action=2},
 		},
 	},
-	-- TODO: there is one in Revendreth as well
+	[333872] = { -- spellID trigger for "Aid From Above" in Revendreth
+		distance = 12,
+		mapID = 1525, -- Revendreth
+		locations = {
+			{x=0.683944, y=0.437566, action=1}, -- the dumb gargoyle never flies over this one on the first round
+			{x=0.666762, y=0.438336, action=1},
+			{x=0.652696, y=0.439629, action=1},
+			{x=0.647043, y=0.456809, action=1},
+			{x=0.644403, y=0.481154, action=1},
+			{x=0.644432, y=0.513499, action=1},
+			{x=0.655230, y=0.537048, action=1},
+			{x=0.666641, y=0.548268, action=1},
+			{x=0.680197, y=0.547572, action=1},
+			{x=0.694791, y=0.541007, action=1},
+			{x=0.714492, y=0.544043, action=1},
+			{x=0.729770, y=0.541664, action=1},
+			{x=0.735927, y=0.529035, action=1},
+			{x=0.743653, y=0.514971, action=1},
+			{x=0.746677, y=0.490237, action=1},
+			{x=0.737623, y=0.476768, action=1},
+			{x=0.728714, y=0.463651, action=1},
+			{x=0.714103, y=0.451544, action=1},
+			{x=0.696749, y=0.441193, action=1},
+		},
+	},
 }
 
 local activeTicker
