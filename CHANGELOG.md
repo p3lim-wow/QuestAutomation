@@ -1,3 +1,7 @@
+### Changes in 90100.3-Release:
+
+- Added: Support for "Just Winging It" in Maldraxxus
+
 ### Changes in 90100.2-Release:
 
 - Added: Support for "Aid From Above" in Revendreth
