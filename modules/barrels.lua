@@ -12,7 +12,7 @@ local QUESTS = {
 
 local barrels = {}
 local function onMouseOver(self)
-	local npcID, guid = addon:GetNPCID('mouseover')
+	local npcID, guid = addon:GetUnitNPCID('mouseover')
 	if npcID == BARREL_ID then
 		-- only mark new barrels, keeping existing marks
 		if not barrels[guid] then

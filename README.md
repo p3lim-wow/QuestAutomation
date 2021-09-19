@@ -18,6 +18,7 @@ This addon will add "helpers" to automate certain quests or types of quests:
 	- "[The Weight of Stone](https://www.wowhead.com/quest=64018)"
 	- "[Aid From Above](https://www.wowhead.com/quest=60657)"
 	- "[Taming the Wilderling](https://www.wowhead.com/npc=180014)"
+	- "[Just Winging It](https://www.wowhead.com/quest=61540)"
 
 ## Feedback
 

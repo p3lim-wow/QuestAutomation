@@ -14,7 +14,7 @@ function addon:GOSSIP_SHOW()
 		return
 	end
 
-	local npcID = self:GetNPCID('npc')
+	local npcID = self:GetUnitNPCID('npc')
 	if npcID == VERSE_NPC then
 		-- the player needs to guess the correct word in a sentence, it's a fixed pattern,
 		-- and it can be brute-forced by always selecting option 2
@@ -43,7 +43,7 @@ end
 
 -- don't really need to mark the correct version, but it's handy
 local function onMouseOver()
-	local npcID = addon:GetNPCID('mouseover')
+	local npcID = addon:GetUnitNPCID('mouseover')
 	if npcID == GUESS_NPC then
 		if GetRaidTargetIndex('mouseover') ~= 8 then
 			SetRaidTarget('mouseover', 8)

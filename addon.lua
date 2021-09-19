@@ -18,11 +18,15 @@ function addon:BindAction(actionIndex)
 end
 
 local NPC_ID_PATTERN = '%w+%-.-%-.-%-.-%-.-%-(.-)%-'
-function addon:GetNPCID(unit)
+function addon:GetGUIDNPCID(guid)
+	return (tonumber(guid:match(NPC_ID_PATTERN)))
+end
+
+function addon:GetUnitNPCID(unit)
 	if unit and UnitExists(unit) then
 		local guid = UnitGUID(unit)
 		if guid then
-			return (tonumber(guid:match(NPC_ID_PATTERN))), guid
+			return addon:GetGUIDNPCID(guid), guid
 		end
 	end
 end
