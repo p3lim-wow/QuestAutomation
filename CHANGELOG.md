@@ -1,3 +1,7 @@
+### Changes in 90100.4-Release:
+
+- Fixed: Error on invalid GUID string
+
 ### Changes in 90100.3-Release:
 
 - Added: Support for "Just Winging It" in Maldraxxus
