@@ -19,7 +19,7 @@ end
 
 local NPC_ID_PATTERN = '%w+%-.-%-.-%-.-%-.-%-(.-)%-'
 function addon:GetGUIDNPCID(guid)
-	return (tonumber(guid:match(NPC_ID_PATTERN)))
+	return (tonumber((guid or ''):match(NPC_ID_PATTERN)))
 end
 
 function addon:GetUnitNPCID(unit)
