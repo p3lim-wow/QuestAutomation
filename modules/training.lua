@@ -98,7 +98,7 @@ local function onUnitAura(self, unit)
 			self:RegisterEvent('CHAT_MSG_MONSTER_SAY', onTrainerSay)
 
 			break
-		else
+		elseif self:IsBound() then
 			-- no buff found, give control back to the player
 			if InCombatLockdown() then
 				self:RegisterEvent('PLAYER_REGEN_ENABLED', function()
