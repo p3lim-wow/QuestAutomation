@@ -53,15 +53,17 @@ function eventMixin:UnregisterEvent(event, callback)
 	assert(isEvent(event), 'arg1 must be an event')
 	assert(type(callback) == 'function', 'arg2 must be a function')
 
-	for index, data in next, callbacks[event] do
-		if data.owner == self and data.callback == callback then
-			callbacks[event][index] = nil
-			break
+	if callbacks and callbacks[event] then
+		for index, data in next, callbacks[event] do
+			if data.owner == self and data.callback == callback then
+				callbacks[event][index] = nil
+				break
+			end
 		end
-	end
 
-	if #callbacks[event] == 0 then
-		eventHandler:UnregisterEvent(event)
+		if #callbacks[event] == 0 then
+			eventHandler:UnregisterEvent(event)
+		end
 	end
 end
 
