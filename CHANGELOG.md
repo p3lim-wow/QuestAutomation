@@ -1,3 +1,7 @@
+### Changes in 90100.5-Release:
+
+- Fixed: Errors when doing training (world)quests
+
 ### Changes in 90100.4-Release:
 
 - Fixed: Error on invalid GUID string
