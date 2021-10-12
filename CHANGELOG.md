@@ -1,3 +1,7 @@
+### Changes in 90100.6-Release:
+
+- Fixed: Training (world)quests not resetting bindings after completion
+
 ### Changes in 90100.5-Release:
 
 - Fixed: Errors when doing training (world)quests
