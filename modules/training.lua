@@ -54,7 +54,7 @@ local function onActionCast(self, unit, _, spellID)
 end
 
 local function onTrainerSay(self, message, sender)
-	if sender == activeQuestData.trainer then
+	if activeQuestData and sender == activeQuestData.trainer then
 		-- figure out which action the trainer wants the player to cast
 		local actionID
 		for actionName, actionIndex in next, actionMessages do
