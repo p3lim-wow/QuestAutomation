@@ -1,3 +1,7 @@
+### Changes in 90105.7-Release:
+
+- Changed: Update Interface version
+
 ### Changes in 90100.6-Release:
 
 - Fixed: Training (world)quests not resetting bindings after completion
