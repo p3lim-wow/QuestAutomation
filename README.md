@@ -1,7 +1,12 @@
 # Quest Automation
 
 This is an addon for the popular MMORPG "World of Warcraft".  
-It can be downloaded at [Curse](https://www.curseforge.com/wow/addons/quest-automation) or at [WoWInterface](//wowinterface.com/downloads/info26142).
+It can be downloaded at one of the following sites:
+
+- [Curse](https://www.curseforge.com/wow/addons/quest-automation)
+- [WoWInterface](https://wowinterface.com/downloads/info26142)
+- [Wago](https://addons.wago.io/addons/questautomation)
+- [GitHub](https://github.com/p3lim-wow/QuestAutomation/releases)
 
 ## Description
 
