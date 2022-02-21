@@ -120,17 +120,6 @@ local function onUnitAura(self, unit)
 	end
 end
 
-local function onQuestRemoved(self, questID)
-	if QUESTS[questID] or not questID then
-		if addon:IsEventRegistered('UNIT_AURA', onUnitAura) then
-			self:UnregisterEvent('UNIT_AURA', onUnitAura)
-		end
-
-		activeQuestData = nil
-		return true
-	end
-end
-
 function addon:QUEST_LOG_UPDATE()
 	-- if logging in with the quest already accepted
 	for questID, questData in next, QUESTS do
@@ -138,16 +127,9 @@ function addon:QUEST_LOG_UPDATE()
 			if not addon:IsEventRegistered('UNIT_AURA', onUnitAura) then
 				addon:RegisterEvent('UNIT_AURA', onUnitAura)
 			end
-			if not addon:IsEventRegistered('QUEST_REMOVED', onQuestRemoved) then
-				addon:RegisterEvent('QUEST_REMOVED', onQuestRemoved)
-			end
-
 			activeQuestData = questData
 
 			return
 		end
 	end
-
-	-- reset if there are no matching quests
-	onQuestRemoved(self)
 end
