@@ -9,9 +9,11 @@
 ## X-WoWI-ID: 26142
 ## X-Wago-ID: kaNe0jG2
 
-libs/LibStub/LibStub.lua
-libs/CallbackHandler-1.0/CallbackHandler-1.0.lua
-libs/HereBeDragons/HereBeDragons-2.0.lua
+#@non-debug@
+# libs/LibStub/LibStub.lua
+# libs/CallbackHandler-1.0/CallbackHandler-1.0.lua
+# libs/HereBeDragons/HereBeDragons-2.0.lua
+#@end-non-debug@
 
 addon.lua
 
