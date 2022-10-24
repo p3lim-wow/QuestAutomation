@@ -54,7 +54,7 @@ function addon.AuraFilterID(a, _, _, _, _, _, _, _, _, _, _, _, b)
 end
 
 -- global utils
-function table.size(tbl)
+function addon.tsize(tbl)
 	-- would really like Lua 5.2 for this :/
 	local size = 0
 	for _ in next, tbl do

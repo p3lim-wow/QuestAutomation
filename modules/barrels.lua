@@ -17,7 +17,7 @@ local function onMouseOver(self)
 		-- only mark new barrels, keeping existing marks
 		if not barrels[guid] then
 			-- calculate next raid target icon and store it
-			local index = (table.size(barrels) % 8) + 1
+			local index = (addon.tsize(barrels) % 8) + 1
 			barrels[guid] = index
 
 			-- if the barrel isn't already marked, mark it
