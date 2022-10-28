@@ -1,3 +1,9 @@
+### Changes in 100000.9-Release:
+
+- Changed: Update Interface version
+- Changed: Use new aura API
+- Fixed: Dragonflight support
+
 ### Changes in 90200.8-Release:
 
 - Changed: Update Interface version
