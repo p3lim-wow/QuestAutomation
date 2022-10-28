@@ -40,7 +40,7 @@ end
 
 function addon:GetPlayerPosition(mapID)
 	local playerPosition = C_Map.GetPlayerMapPosition(mapID, 'player')
-	return playerPosition:GetXY()
+	return playerPosition and playerPosition:GetXY()
 end
 
 function addon:SendNotice(message)
