@@ -49,8 +49,38 @@ function addon:SendNotice(message)
 	end
 end
 
-function addon.AuraFilterID(a, _, _, _, _, _, _, _, _, _, _, _, b)
-	return a == b
+do
+	local function helper(unit, predicate, token, ...)
+		local slot, _, spellID
+		for index = 1, select('#', ...) do
+			slot = select(index, ...)
+			_, _, _, _, _, _, _, _, _, spellID = UnitAuraBySlot(unit, slot)
+			if predicate == spellID then
+				return nil, slot
+			end
+		end
+
+		return token
+	end
+
+	function addon:GetAuraBySpellID(unit, spellID, filter)
+		if unit == 'player' and not filter then
+			return GetPlayerAuraBySpellID(spellID)
+		end
+		if not filter then
+			error('GetAuraBySpellID requires a filter')
+			return
+		end
+
+		local token, slot
+		repeat
+			token, slot = helper(unit, spellID, UnitAuraSlots(unit, filter, nil, token))
+		until token == nil
+
+		if slot then
+			return UnitAuraBySlot(unit, slot)
+		end
+	end
 end
 
 -- global utils

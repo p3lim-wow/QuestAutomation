@@ -80,7 +80,8 @@ local function onUnitAura(self, unit)
 	-- check if the player has the buff that starts the "training session", of which there
 	-- can be multiple versions of, depending on the quest
 	for buff, actionSpells in next, activeQuestData.spells do
-		if AuraUtil.FindAura(addon.AuraFilterID, 'player', 'HELPFUL', buff) then
+		-- if AuraUtil.FindAura(addon.AuraFilterID, 'player', 'HELPFUL', buff) then
+		if addon:GetAuraBySpellID('player', buff) then
 			-- store all possible messages the "trainer" will yell out for the player to do
 			table.wipe(actionMessages)
 			table.wipe(actionResetSpells)

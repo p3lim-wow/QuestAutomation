@@ -70,7 +70,7 @@ local function onTurtleAction(self, unit, _, spellID)
 end
 
 local function getCheckpoint()
-	local _, _, num = AuraUtil.FindAura(addon.AuraFilterID, 'vehicle', 'HARMFUL', TURTLE_CHECKPOINT)
+	local _, _, num = addon:GetAuraBySpellID('vehicle', TURTLE_CHECKPOINT, 'HARMFUL')
 	return num or 0
 end
 
