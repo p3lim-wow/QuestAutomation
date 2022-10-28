@@ -24,7 +24,6 @@ read_globals = {
 	table = {fields = {'wipe'}},
 
 	-- FrameXML objects
-	'AuraUtil', -- FrameXML/AuraUtil.lua
 	'RaidWarningFrame', -- FrameXML/RaidWarning.xml
 
 	-- FrameXML functions
@@ -61,6 +60,10 @@ read_globals = {
 	'SetRaidTarget',
 	'UnitExists',
 	'UnitGUID',
+	'UnitAuraBySlot',
+	'UnitAuraSlots',
+	'UnitAuraBySlot',
+	'GetPlayerAuraBySpellID',
 
 	-- exposed from other addons
 	'LibStub',
