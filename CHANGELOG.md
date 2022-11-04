@@ -1,3 +1,7 @@
+### Changes in 100000.11-Release:
+
+- Fixed: Support for world quests that depend on player buffs
+
 ### Changes in 100000.10-Release:
 
 - Changed: Update Interface version
