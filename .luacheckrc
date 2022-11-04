@@ -44,6 +44,7 @@ read_globals = {
 	'C_Map',
 	'C_Timer',
 	'C_QuestLog',
+	'C_UnitAuras',
 
 	-- API
 	'ClearOverrideBindings',
@@ -63,7 +64,6 @@ read_globals = {
 	'UnitAuraBySlot',
 	'UnitAuraSlots',
 	'UnitAuraBySlot',
-	'GetPlayerAuraBySpellID',
 
 	-- exposed from other addons
 	'LibStub',
