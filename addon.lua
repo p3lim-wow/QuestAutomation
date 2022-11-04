@@ -65,7 +65,7 @@ do
 
 	function addon:GetAuraBySpellID(unit, spellID, filter)
 		if unit == 'player' and not filter then
-			return GetPlayerAuraBySpellID(spellID)
+			return C_UnitAuras.GetPlayerAuraBySpellID(spellID)
 		end
 		if not filter then
 			error('GetAuraBySpellID requires a filter')
