@@ -1,3 +1,7 @@
+### Changes in 100002.12-Release:
+
+- Changed: Update Interface version
+
 ### Changes in 100000.11-Release:
 
 - Fixed: Support for world quests that depend on player buffs
