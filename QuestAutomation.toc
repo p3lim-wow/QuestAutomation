@@ -43,3 +43,4 @@ modules/unknown.lua
 modules/wilderling.lua
 modules/supplies.lua
 modules/flayedwing.lua
+modules/shootfruits.lua
