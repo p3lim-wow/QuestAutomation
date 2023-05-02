@@ -11,16 +11,17 @@
 ## X-Wago-ID: kaNe0jG2
 
 #@non-debug@
+# libs/Dashi/embed.xml
 # libs/LibStub/LibStub.lua
 # libs/CallbackHandler-1.0/CallbackHandler-1.0.lua
 # libs/HereBeDragons/HereBeDragons-2.0.lua
 #@end-non-debug@
+#@debug@
+../Dashi/embed.xml
+#@end-debug@
 
 addon.lua
 
-mixins/event.lua
-
-locale/initialize.lua
 locale/deDE.lua
 locale/esES.lua
 locale/esMX.lua

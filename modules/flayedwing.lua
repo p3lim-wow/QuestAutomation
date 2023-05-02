@@ -59,7 +59,7 @@ local function onVehicleExit(self, unit)
 end
 
 function addon:UNIT_ENTERED_VEHICLE(unit, _, _, _, vehicleGUID)
-	if addon:GetGUIDNPCID(vehicleGUID) == FLAYEDWING_NPC_ID then
+	if addon:GetNPCID(vehicleGUID) == FLAYEDWING_NPC_ID then
 		self:SendNotice(L['Spam %s to complete'])
 
 		addon:RegisterEvent('UNIT_EXITING_VEHICLE', onVehicleExit)
