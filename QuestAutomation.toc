@@ -3,6 +3,7 @@
 ## Version: @project-version@
 ## Title: Quest Automation
 ## Notes: Automates tedious quests
+## IconTexture: Interface\Icons\inv_engineering_90_gear
 ## OptionalDeps: LibStub, CallbackHandler-1.0, HereBeDragons
 
 ## X-Curse-Project-ID: 523854
