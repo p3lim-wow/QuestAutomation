@@ -3,7 +3,7 @@
 This is an addon for the popular MMORPG "World of Warcraft".  
 It can be downloaded at one of the following sites:
 
-- [Curse](https://www.curseforge.com/wow/addons/quest-automation)
+- [CurseForge](https://www.curseforge.com/wow/addons/quest-automation)
 - [WoWInterface](https://wowinterface.com/downloads/info26142)
 - [Wago](https://addons.wago.io/addons/questautomation)
 - [GitHub](https://github.com/p3lim-wow/QuestAutomation/releases)
@@ -25,10 +25,15 @@ This addon will add "helpers" to automate certain quests or types of quests:
 	- "[Taming the Wilderling](https://www.wowhead.com/npc=180014)"
 	- "[Just Winging It](https://www.wowhead.com/quest=61540)"
 
-## Feedback
+## Translations
 
-If you have a question, please use the comments section on Curse/WoWInterface.  
-If you would like to report a bug, please follow [this link](https://github.com/p3lim-wow/QuestAutomation/issues?q=) to get started.
+If you want to help translate QuestAutomation, please use this form on GitHub:  
+[https://github.com/p3lim-wow/QuestAutomation/issues/new?template=translate.yaml](https://github.com/p3lim-wow/QuestAutomation/issues/new?assignees=p3lim&labels=enhancement%2Ctranslation&template=translate.yaml&title=Translation%3A+)
+
+## Feedback & issues
+
+If you would like to report a bug or contribute to the project, please visit GitHub:  
+<https://github.com/p3lim-wow/QuestAutomation/issues/new/choose>
 
 ## Legal
 
