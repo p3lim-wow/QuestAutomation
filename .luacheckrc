@@ -25,6 +25,7 @@ read_globals = {
 
 	-- FrameXML objects
 	'RaidWarningFrame', -- FrameXML/RaidWarning.xml
+	'UIParent', -- FrameXML/UIParent.xml
 
 	-- FrameXML functions
 	'RaidNotice_AddMessage', -- FrameXML/RaidWarning.lua
@@ -58,6 +59,7 @@ read_globals = {
 	'InCombatLockdown',
 	'IsShiftKeyDown',
 	'SetOverrideBinding',
+	'SetOverrideBindingClick',
 	'SetRaidTarget',
 	'UnitExists',
 	'UnitGUID',
