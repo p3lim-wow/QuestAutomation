@@ -35,15 +35,15 @@ body:
   - type: input
     attributes:
       label: '"Click %s first"'
-      description: "%s" is a reference to an NPC
+      description: '"%s" is a reference to an NPC'
       placeholder: Translation here
   - type: input
     attributes:
       label: '"Spam %s to complete"'
-      description: "%s" is a reference to a keybinding
+      description: '"%s" is a reference to a keybinding'
       placeholder: Translation here
   - type: input
     attributes:
       label: '"Stand in circle and spam %s to complete"'
-      description: "%s" is a reference to a keybinding
+      description: '"%s" is a reference to a keybinding'
       placeholder: Translation here
