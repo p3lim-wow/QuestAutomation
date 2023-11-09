@@ -81,7 +81,7 @@ local function onUnitAura(self, unit)
 	-- can be multiple versions of, depending on the quest
 	for buff, actionSpells in next, activeQuestData.spells do
 		-- if AuraUtil.FindAura(addon.AuraFilterID, 'player', 'HELPFUL', buff) then
-		if addon:GetAuraBySpellID('player', buff) then
+		if addon:GetUnitAura('player', buff, 'HELPFUL') then
 			-- store all possible messages the "trainer" will yell out for the player to do
 			table.wipe(actionMessages)
 			table.wipe(actionResetSpells)

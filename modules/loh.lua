@@ -70,8 +70,8 @@ local function onTurtleAction(self, unit, _, spellID)
 end
 
 local function getCheckpoint()
-	local _, _, num = addon:GetAuraBySpellID('vehicle', TURTLE_CHECKPOINT, 'HARMFUL')
-	return num or 0
+	local info = addon:GetUnitAura('vehicle', TURTLE_CHECKPOINT, 'HARMFUL')
+	return info and info.points and info.points[1] or 0
 end
 
 local function onUnitAura(self, unit)
