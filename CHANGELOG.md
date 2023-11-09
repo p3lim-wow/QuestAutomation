@@ -1,3 +1,7 @@
+### Changes in 100200.14-Release:
+
+- Changed: Update Interface version
+
 ### Changes in 100100.13-Release:
 
 - Added: Support for "Low Hanging Fruit" world quest in Ohn'ahran Plains
