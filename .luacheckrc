@@ -24,48 +24,39 @@ read_globals = {
 	table = {fields = {'wipe'}},
 
 	-- FrameXML objects
-	'RaidWarningFrame', -- FrameXML/RaidWarning.xml
-	'UIParent', -- FrameXML/UIParent.xml
+	'RaidWarningFrame',
+	'UIParent',
 
 	-- FrameXML functions
-	'RaidNotice_AddMessage', -- FrameXML/RaidWarning.lua
+	'RaidNotice_AddMessage',
+	'CalculateDistance',
+	'Mixin',
 
 	-- FrameXML constants
-	'ChatTypeInfo', -- FrameXML/ChatFrame.lua
-
-	-- SharedXML functions
-	'Mixin', -- SharedXML/Mixin.lua
-	'CalculateDistance', -- 'SharedXML/MathUtil.lua'
+	'ChatTypeInfo',
 
 	-- GlobalStrings
 	'KEY_SPACE',
 
 	-- namespaces
 	'C_GossipInfo',
-	'C_Map',
-	'C_Timer',
+	'C_Item',
 	'C_QuestLog',
-	'C_UnitAuras',
+	'C_Spell',
+	'C_Timer',
 
 	-- API
 	'ClearOverrideBindings',
 	'CreateFrame',
 	'GetActionInfo',
-	'GetItemCount',
 	'GetLocale',
 	'GetRaidTargetIndex',
-	'GetSpellInfo',
 	'HasExtraActionBar',
 	'InCombatLockdown',
 	'IsShiftKeyDown',
 	'SetOverrideBinding',
 	'SetOverrideBindingClick',
 	'SetRaidTarget',
-	'UnitExists',
-	'UnitGUID',
-	'UnitAuraBySlot',
-	'UnitAuraSlots',
-	'UnitAuraBySlot',
 
 	-- exposed from other addons
 	'LibStub',
