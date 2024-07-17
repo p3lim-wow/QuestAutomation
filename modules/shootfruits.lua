@@ -1,10 +1,11 @@
 local _, addon = ...
 
 local FRUIT_QUEST = 70549 -- Low Hanging Fruit
+local spellInfo = C_Spell.GetSpellInfo(388556)
 local MACRO = ([[
 /target %s
 /click ExtraActionButton1
-]]):format('Honey Plum', (GetSpellInfo(388556)))
+]]):format('Honey Plum', spellInfo.name) -- TODO: localize
 
 local function onQuestRemoved(self, questID)
 	if questID == FRUIT_QUEST then

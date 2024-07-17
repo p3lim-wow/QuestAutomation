@@ -24,7 +24,7 @@ function addon:GOSSIP_SHOW()
 			C_GossipInfo.SelectOption(2)
 		end
 	elseif npcID == JUICE_NPC then
-		if GetItemCount(JUICE_ITEM) == 0 then
+		if C_Item.GetItemCount(JUICE_ITEM) == 0 then
 			if gormJuiceStage == 0 then -- no spammy
 				self:SendNotice(L['Click Squeezums first'])
 			end
