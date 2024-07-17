@@ -33,6 +33,10 @@ local function getClosestSteward()
 end
 
 local function onMouseOver()
+	if addon:GetPlayerMapID() ~= BASTION_MAP_ID then
+		return true
+	end
+
 	-- find the steward that has the correct "tool" for the closest "chore"
 	local closestStewardID = getClosestSteward()
 	if closestStewardID and closestStewardID == addon:GetNPCID('mouseover') then
