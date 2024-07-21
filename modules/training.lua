@@ -86,7 +86,7 @@ local function onUnitAura(self, unit)
 			table.wipe(actionMessages)
 			table.wipe(actionResetSpells)
 			for spellID, actionIndex in next, actionSpells do
-				actionMessages[C_Spell.GetSpellInfo(spellID).name] = actionIndex
+				actionMessages[C_Spell.GetSpellName(spellID)] = actionIndex
 				actionResetSpells[spellID] = true
 			end
 
