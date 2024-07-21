@@ -35,12 +35,12 @@ locale/zhTW.lua
 locale/finish.lua
 
 modules/barrels.lua
-modules/loh.lua
-modules/training.lua
-modules/chores.lua
 modules/boggarts.lua
+modules/chores.lua
+modules/flayedwing.lua
+modules/loh.lua
+modules/shootfruits.lua
+modules/supplies.lua
+modules/training.lua
 modules/unknown.lua
 modules/wilderling.lua
-modules/supplies.lua
-modules/flayedwing.lua
-modules/shootfruits.lua
