@@ -49,7 +49,6 @@ read_globals = {
 	'ClearOverrideBindings',
 	'CreateFrame',
 	'GetActionInfo',
-	'GetLocale',
 	'GetRaidTargetIndex',
 	'HasExtraActionBar',
 	'InCombatLockdown',
