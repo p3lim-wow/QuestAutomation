@@ -1,3 +1,8 @@
+### Changes in 110000.15-Release:
+
+- Changed: Update Interface version
+- Changed: Use updated APIs
+
 ### Changes in 100200.14-Release:
 
 - Changed: Update Interface version
