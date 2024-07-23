@@ -3,7 +3,7 @@ local addonName, addon = ...
 local isBound
 local bindParent = CreateFrame('Frame')
 function addon:Unbind()
-	self:Defer(ClearOverrideBindings, bindParent)
+	self:Defer('ClearOverrideBindings', bindParent)
 	isBound = true
 end
 
@@ -14,7 +14,7 @@ end
 local ACTION_NAME = 'ACTIONBUTTON%d'
 function addon:BindAction(actionIndex)
 	self:Unbind()
-	self:Defer(SetOverrideBinding, bindParent, true, 'SPACE', ACTION_NAME:format(actionIndex))
+	self:Defer('SetOverrideBinding', bindParent, true, 'SPACE', ACTION_NAME:format(actionIndex))
 	isBound = true
 end
 
@@ -24,8 +24,8 @@ do
 
 	function addon:BindMacro(macro)
 		self:Unbind()
-		self:Defer(macroButton, 'SetAttribute', macroButton, 'macrotext', macro)
-		self:Defer(SetOverrideBindingClick, bindParent, true, 'SPACE', macroButton:GetName(), 'LeftButton')
+		self:DeferMethod(macroButton, 'SetAttribute', 'macrotext', macro)
+		self:Defer('SetOverrideBindingClick', bindParent, true, 'SPACE', macroButton:GetName(), 'LeftButton')
 		isBound = true
 	end
 end
