@@ -25,6 +25,7 @@ This addon will add "helpers" to automate certain quests or types of quests:
 	- "[Taming the Wilderling](https://www.wowhead.com/npc=180014)"
 	- "[Just Winging It](https://www.wowhead.com/quest=61540)"
 	- "[Low Hanging Fruit](https://www.wowhead.com/quest=70549)"
+- Provide answers for "[A Time to Reflect](https://www.wowhead.com/quest=43461)" anniversary quest
 
 ## Translations
 

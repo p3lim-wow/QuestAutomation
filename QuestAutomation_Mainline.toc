@@ -44,3 +44,4 @@ modules/supplies.lua
 modules/training.lua
 modules/unknown.lua
 modules/wilderling.lua
+modules/reflect.lua
