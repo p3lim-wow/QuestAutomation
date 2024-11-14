@@ -131,7 +131,7 @@ function addon:GOSSIP_SHOW()
 		if NPCS[npcID] then
 			addon:Print('Unknown option')
 			answered = false
-			for index, info in next, C_GossipInfo.GetOptions() do
+			for _, info in next, C_GossipInfo.GetOptions() do
 				addon:Print(info.gossipOptionID, info.name)
 			end
 		end

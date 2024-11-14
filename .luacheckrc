@@ -46,9 +46,12 @@ read_globals = {
 	'C_Timer',
 
 	-- API
+	'AcceptQuest',
 	'ClearOverrideBindings',
 	'CreateFrame',
 	'GetActionInfo',
+	'GetQuestID',
+	'GetQuestReward',
 	'GetRaidTargetIndex',
 	'HasExtraActionBar',
 	'InCombatLockdown',
