@@ -1,3 +1,8 @@
+### Changes in 110000.16-Release:
+
+- Added: Automate "A Time to Reflect" anniversary quest
+- Changed: Update Interface version
+
 ### Changes in 110000.15-Release:
 
 - Changed: Update Interface version
