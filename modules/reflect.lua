@@ -103,11 +103,34 @@ local ANSWERS = {
 	[111355] = true,
 }
 
+local QUESTS = {
+	[43323] = true,
+	[43461] = true,
+}
+
+local NPCS = {
+	[110034] = true,
+	[110035] = true,
+}
+
 function addon:GOSSIP_SHOW()
 	for _, info in next, C_GossipInfo.GetOptions() do
 		if ANSWERS[info.gossipOptionID or 0] then
 			C_GossipInfo.SelectOption(info.gossipOptionID)
 			break
 		end
+
+
+function addon:QUEST_DETAIL()
+	local questID = GetQuestID() or 0
+	if QUESTS[questID] then
+		AcceptQuest()
+	end
+end
+
+function addon:QUEST_COMPLETE()
+	local questID = GetQuestID() or 0
+	if QUESTS[questID] then
+		GetQuestReward(1)
 	end
 end
