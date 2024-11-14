@@ -113,13 +113,30 @@ local NPCS = {
 	[110035] = true,
 }
 
+local answered
 function addon:GOSSIP_SHOW()
-	for _, info in next, C_GossipInfo.GetOptions() do
-		if ANSWERS[info.gossipOptionID or 0] then
-			C_GossipInfo.SelectOption(info.gossipOptionID)
-			break
+	if answered then
+		answered = false
+		C_GossipInfo.CloseGossip()
+	else
+		for _, info in next, C_GossipInfo.GetOptions() do
+			if ANSWERS[info.gossipOptionID or 0] then
+				answered = true
+				C_GossipInfo.SelectOption(info.gossipOptionID)
+				return
+			end
 		end
 
+		local npcID = addon:GetNPCID('npc')
+		if NPCS[npcID] then
+			addon:Print('Unknown option')
+			answered = false
+			for index, info in next, C_GossipInfo.GetOptions() do
+				addon:Print(info.gossipOptionID, info.name)
+			end
+		end
+	end
+end
 
 function addon:QUEST_DETAIL()
 	local questID = GetQuestID() or 0
