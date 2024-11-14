@@ -127,7 +127,7 @@ function addon:GOSSIP_SHOW()
 			end
 		end
 
-		local npcID = addon:GetNPCID('npc')
+		local npcID = addon:GetUnitID('npc')
 		if NPCS[npcID] then
 			addon:Print('Unknown option')
 			answered = false

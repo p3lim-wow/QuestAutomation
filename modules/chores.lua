@@ -39,7 +39,7 @@ local function onMouseOver()
 
 	-- find the steward that has the correct "tool" for the closest "chore"
 	local closestStewardID = getClosestSteward()
-	if closestStewardID and closestStewardID == addon:GetNPCID('mouseover') then
+	if closestStewardID and closestStewardID == addon:GetUnitID('mouseover') then
 		if GetRaidTargetIndex('mouseover') ~= 4 then
 			-- the steward is not already marked with a star, mark it
 			SetRaidTarget('mouseover', 4)
