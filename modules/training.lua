@@ -4,7 +4,7 @@ local L = addon.L
 local QUESTS = {
 	-- questID = {trainer = 'npcName', spells = {...}}
 	[59585] = { -- We'll Make an Aspirant Out of You, Bastion
-		trainer = L['Trainer Ikaros'],
+		trainerID = 165239, -- Trainer Ikaros
 		spells = {
 			-- buffID = {actionSpellID = actionIndex}
 			[321842] = {
@@ -25,7 +25,7 @@ local QUESTS = {
 		}
 	},
 	[64271] = { -- A More Civilized Way, Korthia
-		trainer = L['Nadjia the Mistblade'],
+		trainerID = 180523, -- Nadjia the Mistblade
 		spells = {
 			-- buffID = {actionSpellID = actionIndex}
 			[355677] = {
@@ -36,6 +36,11 @@ local QUESTS = {
 		}
 	},
 }
+
+-- trigger cache
+for _, info in next, QUESTS do
+	addon:GetNPCName(info.trainerID)
+end
 
 local activeQuestData
 local actionMessages = {}
@@ -54,7 +59,7 @@ local function onActionCast(self, unit, _, spellID)
 end
 
 local function onTrainerSay(self, message, sender)
-	if activeQuestData and sender == activeQuestData.trainer then
+	if activeQuestData and sender == addon:GetNPCName(activeQuestData.trainerID) then
 		-- figure out which action the trainer wants the player to cast
 		local actionID
 		for actionName, actionIndex in next, actionMessages do
@@ -94,7 +99,7 @@ local function onUnitAura(self, unit)
 			self:BindAction(4)
 
 			-- watch for the next action the trainer asks the player to perform
-			self:SendNotice(L['Spam %s to complete'])
+			self:SendNotice(L['Spam SPACEBAR to complete'])
 			self:RegisterEvent('UNIT_SPELLCAST_SUCCEEDED', onActionCast)
 			self:RegisterEvent('CHAT_MSG_MONSTER_SAY', onTrainerSay)
 
