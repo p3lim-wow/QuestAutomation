@@ -91,7 +91,7 @@ local function pollPlayerPosition()
 
 	if actionIndex then
 		addon:BindAction(actionIndex)
-		addon:SendNotice(L['Spam %s to complete']) -- just as a reminder
+		addon:SendNotice(L['Spam SPACEBAR to complete']) -- just as a reminder
 	else
 		addon:Unbind()
 	end
@@ -104,7 +104,7 @@ function addon:UNIT_SPELLCAST_SUCCEEDED(unit, _, spellID)
 
 	local questData = QUESTS[spellID]
 	if questData then
-		self:SendNotice(L['Spam %s to complete'])
+		self:SendNotice(L['Spam SPACEBAR to complete'])
 
 		activeQuestData = questData
 

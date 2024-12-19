@@ -111,7 +111,7 @@ local function onTurtleEntered(self)
 	self:RegisterEvent('UNIT_SPELLCAST_SUCCEEDED', onTurtleAction)
 	self:RegisterEvent('UNIT_EXITED_VEHICLE', onTurtleExited)
 
-	self:SendNotice(L['Spam %s to complete'])
+	self:SendNotice(L['Spam SPACEBAR to complete'])
 end
 
 local function onQuestRemoved(self, questID)

@@ -28,7 +28,7 @@ function addon:UNIT_SPELLCAST_SUCCEEDED(unit, _, spellID)
 
 	if spellID == TAMING_SPELL then
 		-- player initiated the wilderling
-		self:SendNotice(L['Spam %s to complete'])
+		self:SendNotice(L['Spam SPACEBAR to complete'])
 		self:RegisterEvent('UNIT_EXITED_VEHICLE', onVehicleExit)
 
 		isTaming = true

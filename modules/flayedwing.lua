@@ -60,7 +60,7 @@ end
 
 function addon:UNIT_ENTERED_VEHICLE(unit, _, _, _, vehicleGUID)
 	if addon:GetUnitID(vehicleGUID) == FLAYEDWING_NPC_ID then
-		self:SendNotice(L['Spam %s to complete'])
+		self:SendNotice(L['Spam SPACEBAR to complete'])
 
 		addon:RegisterEvent('UNIT_EXITING_VEHICLE', onVehicleExit)
 		addon:RegisterEvent('UNIT_SPELLCAST_SUCCEEDED', onSpellCast)
