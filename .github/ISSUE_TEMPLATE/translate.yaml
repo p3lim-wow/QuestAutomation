@@ -1,11 +1,11 @@
+# This file is auto-generated!
 name: Translation
 description: Provide a translation for in-game strings.
 title: 'Translation: '
 labels:
-  - enhancement
   - translation
 assignees:
-  - p3lim
+  - p3lim-wow
 body:
   - type: dropdown
     id: locale
@@ -28,22 +28,17 @@ body:
     attributes:
       value: |
         Please translate each sentence below into the fields next to them.  
-        It is not required to translate all of them.
 
         ---
-# the rest is a list of strings to translate
   - type: input
     attributes:
-      label: '"Click %s first"'
-      description: '"%s" is a reference to an NPC'
+      label: Click %s first
       placeholder: Translation here
+    validations:
+      required: true
   - type: input
     attributes:
-      label: '"Spam %s to complete"'
-      description: '"%s" is a reference to a keybinding'
+      label: Spam SPACEBAR to complete
       placeholder: Translation here
-  - type: input
-    attributes:
-      label: '"Stand in circle and spam %s to complete"'
-      description: '"%s" is a reference to a keybinding'
-      placeholder: Translation here
+    validations:
+      required: true
