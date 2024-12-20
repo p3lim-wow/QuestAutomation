@@ -1,3 +1,9 @@
+### Changes in 110000.17-Release:
+
+- Changed: Update Interface version
+- Changed: Use cache and scanning to get NPC names
+- Removed: Untranslated strings
+
 ### Changes in 110000.16-Release:
 
 - Added: Automate "A Time to Reflect" anniversary quest
