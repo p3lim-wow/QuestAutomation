@@ -29,8 +29,8 @@ This addon will add "helpers" to automate certain quests or types of quests:
 
 ## Translations
 
-If you want to help translate QuestAutomation, please use this form on GitHub:  
-[https://github.com/p3lim-wow/QuestAutomation/issues/new?template=translate.yaml](https://github.com/p3lim-wow/QuestAutomation/issues/new?assignees=p3lim&labels=enhancement%2Ctranslation&template=translate.yaml&title=Translation%3A+)
+If you want to help translate Quest Automation, please go here:  
+<https://legacy.curseforge.com/wow/addons/quest-automation/localization>
 
 ## Feedback & issues
 
