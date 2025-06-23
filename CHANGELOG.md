@@ -1,3 +1,9 @@
+### Changes in 110100.18-Release:
+
+- Added: (World) quests that require targeting a mob and using extra action button now auto-targets for you
+- Added: Support for more "shoot" (world) quests
+- Changed: Update Interface version
+
 ### Changes in 110000.17-Release:
 
 - Changed: Update Interface version
