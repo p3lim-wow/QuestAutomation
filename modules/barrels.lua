@@ -10,14 +10,14 @@ local QUESTS = {
 	[45072] = true,
 }
 
-local barrels = {}
+local barrels = addon:T()
 local function onMouseOver(self)
 	local npcID, guid = addon:GetUnitID('mouseover')
 	if npcID == BARREL_ID then
 		-- only mark new barrels, keeping existing marks
 		if not barrels[guid] then
 			-- calculate next raid target icon and store it
-			local index = (addon:tsize(barrels) % 8) + 1
+			local index = (barrels:size() % 8) + 1
 			barrels[guid] = index
 
 			-- if the barrel isn't already marked, mark it
