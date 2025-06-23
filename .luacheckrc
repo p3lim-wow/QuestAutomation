@@ -50,6 +50,7 @@ read_globals = {
 	'ClearOverrideBindings',
 	'CreateFrame',
 	'GetActionInfo',
+	'GetBindingKey',
 	'GetQuestID',
 	'GetQuestReward',
 	'GetRaidTargetIndex',
