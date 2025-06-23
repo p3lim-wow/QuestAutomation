@@ -38,7 +38,7 @@ modules/boggarts.lua
 modules/chores.lua
 modules/flayedwing.lua
 modules/loh.lua
-modules/shootfruits.lua
+modules/shoot.lua
 modules/supplies.lua
 modules/training.lua
 modules/unknown.lua

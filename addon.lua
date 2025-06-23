@@ -12,9 +12,9 @@ function addon:IsBound()
 end
 
 local ACTION_NAME = 'ACTIONBUTTON%d'
-function addon:BindAction(actionIndex)
+function addon:BindAction(actionIndex, key)
 	self:Unbind()
-	self:Defer('SetOverrideBinding', bindParent, true, 'SPACE', ACTION_NAME:format(actionIndex))
+	self:Defer('SetOverrideBinding', bindParent, true, key or 'SPACE', ACTION_NAME:format(actionIndex))
 	isBound = true
 end
 
@@ -22,10 +22,10 @@ do
 	local macroButton = addon:CreateButton('Button', addonName .. 'MacroButton', UIParent, 'SecureActionButtonTemplate')
 	macroButton:SetAttribute('type', 'macro')
 
-	function addon:BindMacro(macro)
+	function addon:BindMacro(macro, key)
 		self:Unbind()
 		self:DeferMethod(macroButton, 'SetAttribute', 'macrotext', macro)
-		self:Defer('SetOverrideBindingClick', bindParent, true, 'SPACE', macroButton:GetName(), 'LeftButton')
+		self:Defer('SetOverrideBindingClick', bindParent, true, key or 'SPACE', macroButton:GetName(), 'LeftButton')
 		isBound = true
 	end
 end
