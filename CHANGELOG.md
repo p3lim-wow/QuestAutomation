@@ -1,3 +1,8 @@
+### Changes in 110205.19-Release:
+
+- Changed: Update Interface version
+- Fixed: Accidental pollution of the global table library
+
 ### Changes in 110100.18-Release:
 
 - Added: (World) quests that require targeting a mob and using extra action button now auto-targets for you
