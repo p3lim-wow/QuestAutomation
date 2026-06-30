@@ -37,12 +37,15 @@ local function onMouseOver()
 		return true
 	end
 
-	-- find the steward that has the correct "tool" for the closest "chore"
-	local closestStewardID = getClosestSteward()
-	if closestStewardID and closestStewardID == addon:GetUnitID('mouseover') then
-		if GetRaidTargetIndex('mouseover') ~= 4 then
-			-- the steward is not already marked with a star, mark it
-			SetRaidTarget('mouseover', 4)
+	local npcID = UnitCreatureID('mouseover')
+	if not issecretvalue(npcID) and npcID ~= nil then
+		-- find the steward that has the correct "tool" for the closest "chore"
+		local closestStewardID = getClosestSteward()
+		if closestStewardID and closestStewardID == npcID then
+			if GetRaidTargetIndex('mouseover') ~= 4 then
+				-- the steward is not already marked with a star, mark it
+				SetRaidTarget('mouseover', 4)
+			end
 		end
 	end
 end

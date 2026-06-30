@@ -127,8 +127,8 @@ function addon:GOSSIP_SHOW()
 			end
 		end
 
-		local npcID = addon:GetUnitID('npc')
-		if NPCS[npcID] then
+		local npcID = UnitCreatureID('mouseover')
+		if not issecretvalue(npcID) and NPCS[npcID or 0] then
 			addon:Print('Unknown option')
 			answered = false
 			for _, info in next, C_GossipInfo.GetOptions() do

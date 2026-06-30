@@ -39,6 +39,7 @@ read_globals = {
 	'KEY_SPACE',
 
 	-- namespaces
+	'C_CreatureInfo',
 	'C_GossipInfo',
 	'C_Item',
 	'C_QuestLog',
@@ -60,6 +61,9 @@ read_globals = {
 	'SetOverrideBinding',
 	'SetOverrideBindingClick',
 	'SetRaidTarget',
+	'UnitCreatureID',
+	'UnitGUID',
+	'issecretvalue',
 
 	-- exposed from other addons
 	'LibStub',

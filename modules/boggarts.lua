@@ -4,8 +4,8 @@ local BOGGARD_ID = 170080
 local BOGGARD_QUEST = 60739
 
 local function onMouseOver()
-	local npcID = addon:GetUnitID('mouseover')
-	if npcID == BOGGARD_ID then
+	local npcID = UnitCreatureID('mouseover')
+	if not issecretvalue(npcID) and npcID == BOGGARD_ID then
 		if GetRaidTargetIndex('mouseover') ~= 8 then
 			-- the boggard is not already marked with a skull, mark it
 			SetRaidTarget('mouseover', 8)

@@ -18,37 +18,39 @@ function addon:GOSSIP_SHOW()
 		return
 	end
 
-	local npcID = self:GetUnitID('npc')
-	if npcID == VERSE_NPC then
-		-- the player needs to guess the correct word in a sentence, it's a fixed pattern,
-		-- and it can be brute-forced by always selecting option 2
-		if C_GossipInfo.GetNumOptions() == 1 then
-			C_GossipInfo.SelectOption(1)
-		else
-			C_GossipInfo.SelectOption(2)
-		end
-	elseif npcID == JUICE_NPC then
-		if C_Item.GetItemCount(JUICE_ITEM) == 0 then
-			if gormJuiceStage == 0 then -- no spammy
-				self:SendNotice(L['Click %s first']:format(addon:GetNPCName(SQUEEZUM_NPC)))
-			end
-		else
-			gormJuiceStage = gormJuiceStage + 1
-			if gormJuiceStage == 1 then
+	local npcID = UnitCreatureID('mouseover')
+	if not issecretvalue(npcID) and npcID ~= nil then
+		if npcID == VERSE_NPC then
+			-- the player needs to guess the correct word in a sentence, it's a fixed pattern,
+			-- and it can be brute-forced by always selecting option 2
+			if C_GossipInfo.GetNumOptions() == 1 then
+				C_GossipInfo.SelectOption(1)
+			else
 				C_GossipInfo.SelectOption(2)
-			elseif gormJuiceStage == 2 then
-				C_GossipInfo.SelectOption(5)
 			end
+		elseif npcID == JUICE_NPC then
+			if C_Item.GetItemCount(JUICE_ITEM) == 0 then
+				if gormJuiceStage == 0 then -- no spammy
+					self:SendNotice(L['Click %s first']:format(addon:GetNPCName(SQUEEZUM_NPC)))
+				end
+			else
+				gormJuiceStage = gormJuiceStage + 1
+				if gormJuiceStage == 1 then
+					C_GossipInfo.SelectOption(2)
+				elseif gormJuiceStage == 2 then
+					C_GossipInfo.SelectOption(5)
+				end
+			end
+		elseif npcID == GUESS_NPC then
+			C_GossipInfo.SelectOption(3)
 		end
-	elseif npcID == GUESS_NPC then
-		C_GossipInfo.SelectOption(3)
 	end
 end
 
 -- don't really need to mark the correct version, but it's handy
 local function onMouseOver()
-	local npcID = addon:GetUnitID('mouseover')
-	if npcID == GUESS_NPC then
+	local npcID = UnitCreatureID('mouseover')
+	if not issecretvalue(npcID) and npcID == GUESS_NPC then
 		if GetRaidTargetIndex('mouseover') ~= 8 then
 			SetRaidTarget('mouseover', 8)
 		end

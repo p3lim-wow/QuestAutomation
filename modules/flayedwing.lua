@@ -59,7 +59,12 @@ local function onVehicleExit(self, unit)
 end
 
 function addon:UNIT_ENTERED_VEHICLE(unit, _, _, _, vehicleGUID)
-	if addon:GetUnitID(vehicleGUID) == FLAYEDWING_NPC_ID then
+	if issecretvalue(vehicleGUID) then
+		return
+	end
+
+	local npcID = C_CreatureInfo.GetCreatureID(vehicleGUID)
+	if not issecretvalue(npcID) and npcID == FLAYEDWING_NPC_ID then
 		self:SendNotice(L['Spam SPACEBAR to complete'])
 
 		addon:RegisterEvent('UNIT_EXITING_VEHICLE', onVehicleExit)
