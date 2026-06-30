@@ -1,3 +1,8 @@
+### Changes in 120000.20-Release:
+
+- Changed: Update Interface version
+- Fixed: Secrets for Midnight
+
 ### Changes in 110205.19-Release:
 
 - Changed: Update Interface version
