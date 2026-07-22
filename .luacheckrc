@@ -28,9 +28,9 @@ read_globals = {
 	'UIParent',
 
 	-- FrameXML functions
-	'RaidNotice_AddMessage',
 	'CalculateDistance',
-	'Mixin',
+	'RaidNotice_AddMessage',
+	'RaidWarningUtil',
 
 	-- FrameXML constants
 	'ChatTypeInfo',
@@ -58,6 +58,7 @@ read_globals = {
 	'HasExtraActionBar',
 	'InCombatLockdown',
 	'IsShiftKeyDown',
+	'Mixin',
 	'SetOverrideBinding',
 	'SetOverrideBindingClick',
 	'SetRaidTarget',
