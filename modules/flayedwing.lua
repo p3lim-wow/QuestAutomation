@@ -63,11 +63,13 @@ function addon:UNIT_ENTERED_VEHICLE(unit, _, _, _, vehicleGUID)
 		return
 	end
 
-	local npcID = C_CreatureInfo.GetCreatureID(vehicleGUID)
-	if not issecretvalue(npcID) and npcID == FLAYEDWING_NPC_ID then
-		self:SendNotice(L['Spam SPACEBAR to complete'])
+	if vehicleGUID ~= nil and not issecretvalue(vehicleGUID) then
+		local npcID = C_CreatureInfo.GetCreatureID(vehicleGUID)
+		if not issecretvalue(npcID) and npcID == FLAYEDWING_NPC_ID then
+			self:SendNotice(L['Spam SPACEBAR to complete'])
 
-		addon:RegisterEvent('UNIT_EXITING_VEHICLE', onVehicleExit)
-		addon:RegisterEvent('UNIT_SPELLCAST_SUCCEEDED', onSpellCast)
+			addon:RegisterEvent('UNIT_EXITING_VEHICLE', onVehicleExit)
+			addon:RegisterEvent('UNIT_SPELLCAST_SUCCEEDED', onSpellCast)
+		end
 	end
 end
