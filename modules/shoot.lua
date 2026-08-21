@@ -47,7 +47,7 @@ local function getCreatureNames()
 	local missing = 0
 	for questID, npcID in next, QUESTS_MOBS do
 		if type(npcID) == 'number' then
-			local name = addon:GetNPCName(npcID)
+			local name = addon:GetCreatureName(npcID)
 			if not name then
 				missing = missing + 1
 			else

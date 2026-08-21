@@ -77,23 +77,26 @@ local function onVehicleExit(self, unit)
 end
 
 local function pollPlayerPosition()
-	local x, y = addon:GetPlayerPosition(activeQuestData.mapID)
+	local position = addon:GetPlayerPosition(activeQuestData.mapID)
+	if position then
+		local x, y = position:GetXY()
 
-	local actionIndex
-	for _, location in next, activeQuestData.locations do
-		-- use utilities by Blizzard (MathUtil)
-		local distance = CalculateDistance(location.x * 100, location.y * 100, x * 100, y * 100)
-		if distance <= (activeQuestData.distance / 100) then
-			actionIndex = location.action
-			break
+		local actionIndex
+		for _, location in next, activeQuestData.locations do
+			-- use utilities by Blizzard (MathUtil)
+			local distance = CalculateDistance(location.x * 100, location.y * 100, x * 100, y * 100)
+			if distance <= (activeQuestData.distance / 100) then
+				actionIndex = location.action
+				break
+			end
 		end
-	end
 
-	if actionIndex then
-		addon:BindAction(actionIndex)
-		addon:SendNotice(L['Spam SPACEBAR to complete']) -- just as a reminder
-	else
-		addon:Unbind()
+		if actionIndex then
+			addon:BindAction(actionIndex)
+			addon:SendNotice(L['Spam SPACEBAR to complete']) -- just as a reminder
+		else
+			addon:Unbind()
+		end
 	end
 end
 

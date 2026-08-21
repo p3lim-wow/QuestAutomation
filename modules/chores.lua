@@ -18,18 +18,22 @@ local function getClosestSteward()
 	local closestSteward
 	local closestDistance = math.huge
 
-	local x, y = addon:GetPlayerPosition(BASTION_MAP_ID)
-	for npcID, data in next, STEWARD_LOCATIONS do
-		for _, coords in next, data do
-			local distance = HBD:GetZoneDistance(BASTION_MAP_ID, x, y, BASTION_MAP_ID, coords[1], coords[2])
-			if distance < closestDistance then
-				closestSteward = npcID
-				closestDistance = distance
+
+	local position = addon:GetPlayerPosition(BASTION_MAP_ID)
+	if position then
+		local x, y = position:GetXY()
+		for npcID, data in next, STEWARD_LOCATIONS do
+			for _, coords in next, data do
+				local distance = HBD:GetZoneDistance(BASTION_MAP_ID, x, y, BASTION_MAP_ID, coords[1], coords[2])
+				if distance < closestDistance then
+					closestSteward = npcID
+					closestDistance = distance
+				end
 			end
 		end
-	end
 
-	return closestSteward
+		return closestSteward
+	end
 end
 
 local function onMouseOver()

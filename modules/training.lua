@@ -39,7 +39,7 @@ local QUESTS = {
 
 -- trigger cache
 for _, info in next, QUESTS do
-	addon:GetNPCName(info.trainerID)
+	addon:GetCreatureName(info.trainerID)
 end
 
 local activeQuestData
@@ -59,7 +59,7 @@ local function onActionCast(self, unit, _, spellID)
 end
 
 local function onTrainerSay(self, message, sender)
-	if activeQuestData and sender == addon:GetNPCName(activeQuestData.trainerID) then
+	if activeQuestData and sender == addon:GetCreatureName(activeQuestData.trainerID) then
 		-- figure out which action the trainer wants the player to cast
 		local actionID
 		for actionName, actionIndex in next, actionMessages do
@@ -85,8 +85,7 @@ local function onUnitAura(self, unit)
 	-- check if the player has the buff that starts the "training session", of which there
 	-- can be multiple versions of, depending on the quest
 	for buff, actionSpells in next, activeQuestData.spells do
-		-- if AuraUtil.FindAura(addon.AuraFilterID, 'player', 'HELPFUL', buff) then
-		if addon:GetUnitAura('player', buff, 'HELPFUL') then
+		if C_UnitAuras.GetUnitAuraBySpellID('player', buff) then
 			-- store all possible messages the "trainer" will yell out for the player to do
 			table.wipe(actionMessages)
 			table.wipe(actionResetSpells)

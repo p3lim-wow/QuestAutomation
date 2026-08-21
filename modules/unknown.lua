@@ -9,7 +9,7 @@ local GUESS_NPC = 174498 -- the correct version of Shimmersod
 local SQUEEZUM_NPC = 174362
 
 -- trigger cache
-addon:GetNPCName(SQUEEZUM_NPC)
+addon:GetCreatureName(SQUEEZUM_NPC)
 
 local gormJuiceStage = 0
 function addon:GOSSIP_SHOW()
@@ -31,7 +31,7 @@ function addon:GOSSIP_SHOW()
 		elseif npcID == JUICE_NPC then
 			if C_Item.GetItemCount(JUICE_ITEM) == 0 then
 				if gormJuiceStage == 0 then -- no spammy
-					self:SendNotice(L['Click %s first']:format(addon:GetNPCName(SQUEEZUM_NPC)))
+					self:SendNotice(L['Click %s first']:format(addon:GetCreatureName(SQUEEZUM_NPC)))
 				end
 			else
 				gormJuiceStage = gormJuiceStage + 1
