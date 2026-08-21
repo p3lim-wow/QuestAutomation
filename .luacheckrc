@@ -45,6 +45,7 @@ read_globals = {
 	'C_QuestLog',
 	'C_Spell',
 	'C_Timer',
+	'C_UnitAuras',
 
 	-- API
 	'AcceptQuest',
