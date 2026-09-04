@@ -32,10 +32,6 @@ end
 
 function addon:SendNotice(message)
 	for _ = 1, 2 do
-		if RaidWarningUtil then
-			RaidWarningUtil.AddMessage(message, ChatTypeInfo.RAID_WARNING)
-		else -- TODO: remove in 12.1
-			RaidNotice_AddMessage(RaidWarningFrame, message, ChatTypeInfo.RAID_WARNING)
-		end
+		RaidWarningUtil.AddMessage(message, ChatTypeInfo.RAID_WARNING)
 	end
 end
