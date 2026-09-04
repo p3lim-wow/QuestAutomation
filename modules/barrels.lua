@@ -18,7 +18,7 @@ local function onMouseOver(self)
 		local guid = UnitGUID('mouseover')
 		if not barrels[guid] then
 			-- calculate next raid target icon and store it
-			local index = (barrels:size() % 8) + 1
+			local index = ((barrels:count()) % 8) + 1
 			barrels[guid] = index
 
 			-- if the barrel isn't already marked, mark it
